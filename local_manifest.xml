@@ -1,14 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
-<remote name="x86" 
-           fetch="../../android-x86/" />
+  <remote  name="aosp"
+           fetch=".." />
+  <remote  name="shugaoye"
+           fetch="../../github" />
 
-<remote  name="shugaoye"
-            fetch="../../github/" />
+  <!-- Remove un-used devices -->
+  <remove-project path="device/asus/deb" name="device/asus/deb" groups="device,flo" />
+  <remove-project path="device/asus/flo" name="device/asus/flo" groups="device,flo" />
+  <remove-project path="device/asus/flo-kernel" name="device/asus/flo-kernel" groups="device,flo" clone-depth="1" />
+  <remove-project path="device/asus/fugu" name="device/asus/fugu" groups="device,fugu,broadcom_pdk" />
+  <remove-project path="device/asus/fugu-kernel" name="device/asus/fugu-kernel" groups="device,fugu,broadcom_pdk" clone-depth="1" />
+  <remove-project path="device/lge/bullhead" name="device/lge/bullhead" groups="device,bullhead" />
+  <remove-project path="device/lge/bullhead-kernel" name="device/lge/bullhead-kernel" groups="device,bullhead" />
+  <remove-project path="device/generic/arm64" name="device/generic/arm64" groups="pdk" />
+  <remove-project path="device/generic/armv7-a-neon" name="device/generic/armv7-a-neon" groups="pdk" />
+  <remove-project path="device/generic/mips" name="device/generic/mips" groups="pdk" />
+  <remove-project path="device/generic/mini-emulator-arm64" name="device/generic/mini-emulator-arm64" groups="pdk" />
+  <remove-project path="device/generic/mini-emulator-armv7-a-neon" name="device/generic/mini-emulator-armv7-a-neon" groups="pdk" />
+  <remove-project path="device/generic/mini-emulator-mips" name="device/generic/mini-emulator-mips" groups="pdk" />
+  <remove-project path="device/google/accessory/arduino" name="device/google/accessory/arduino" groups="device" />
+  <remove-project path="device/google/accessory/demokit" name="device/google/accessory/demokit" groups="device" />
+  <remove-project path="device/google/atv" name="device/google/atv" groups="device,fugu,broadcom_pdk,generic_fs" />
+  <remove-project path="device/htc/flounder" name="device/htc/flounder" groups="device,flounder,broadcom_pdk" />
+  <remove-project path="device/htc/flounder-kernel" name="device/htc/flounder-kernel" groups="device,flounder,broadcom_pdk" clone-depth="1" />
+  <remove-project path="device/huawei/angler" name="device/huawei/angler" groups="device,angler,broadcom_pdk" />
+  <remove-project path="device/huawei/angler-kernel" name="device/huawei/angler-kernel" groups="device,angler,broadcom_pdk" />
+  <remove-project path="device/lge/hammerhead" name="device/lge/hammerhead" groups="device,hammerhead,broadcom_pdk,generic_fs" />
+  <remove-project path="device/lge/hammerhead-kernel" name="device/lge/hammerhead-kernel" groups="device,hammerhead,broadcom_pdk,generic_fs" clone-depth="1" />
+  <remove-project path="device/moto/shamu" name="device/moto/shamu" groups="device,shamu,broadcom_pdk" />
+  <remove-project path="device/moto/shamu-kernel" name="device/moto/shamu-kernel" groups="device,shamu,broadcom_pdk" clone-depth="1" />
+  <remove-project path="device/sample" name="device/sample" groups="pdk" />
+  <remove-project path="device/generic/goldfish" name="device/generic/goldfish" groups="pdk" />
 
-  <project path="kernel" name="goldfish" remote="shugaoye" revision="android-goldfish-3.4a" />
-  <project path="device/generic/x86emu" name="x86emu" remote="shugaoye" revision="android-4.2.2_r1.2" />
+  <!-- Using github -->
+  <project path="device/generic/goldfish" name="device_generic_goldfish" remote="shugaoye" groups="pdk" revision="master" />
+  <project path="kernel" name="goldfish" remote="shugaoye" revision="android-goldfish-3.10" />
+  <project path="device/generic/x86emu" name="x86emu" remote="shugaoye" revision="master" />
   <project path="bootable/newinstaller" name="platform_bootable_newinstaller" remote="shugaoye" revision="marshmallow-x86" />
   
 </manifest>
