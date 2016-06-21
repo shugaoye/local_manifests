@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+<remote name="x86" 
+           fetch="../../android-x86/" />
+
+<remote  name="shugaoye"
+            fetch="../../github/" />
+
+  <project path="kernel" name="goldfish" remote="shugaoye" revision="android-goldfish-3.4a" />
+  <project path="device/generic/x86emu" name="x86emu" remote="shugaoye" revision="android-4.2.2_r1.2" />
+  <project path="bootable/newinstaller" name="platform_bootable_newinstaller" remote="shugaoye" revision="marshmallow-x86" />
+  
+</manifest>
+
